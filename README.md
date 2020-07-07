@@ -6985,3 +6985,51 @@ Using constructors, `new.target` refers to the constructor (points to the class 
 </details>
 
 ---
+
+#### 35. What is the output of below code?
+```js
+const [x, ...y,] = [1, 2, 3, 4];
+console.log(x, y);
+```
+
+- 1: 1, [2, 3, 4]
+- 2: 1, [2, 3]
+- 3: 1, [2]
+- 4: SyntaxError
+
+<details><summary><b>Answer</b></summary>
+<p>
+
+##### Answer: 4
+It throws a syntax error because rest element should not have a trailing comma. You should always consider using rest operator as the last element.
+</p>
+
+</details>
+
+---
+
+#### 36. What is the output of below code?
+```js
+const {a: x = 10, b: y = 20} = {a: 30};
+
+console.log(x);
+console.log(y);
+```
+
+- 1: 30, 20
+- 2: 10, 20
+- 3: 10, undefined
+- 4: 30, undefined
+
+<details><summary><b>Answer</b></summary>
+<p>
+
+##### Answer: 1
+The object property follows below rules,
+1. The object properties can be retrieved and assigned to a variable with a different name
+2. The property assigned a default value when the retrieved value is `undefined`
+</p>
+
+</details>
+
+---
